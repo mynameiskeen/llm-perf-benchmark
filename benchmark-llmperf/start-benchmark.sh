@@ -255,7 +255,7 @@ fi
 ## Start the metrics collecting command
 if [ "$RUNTIME" = "vllm" ]; then
   metric=result_outputs/${MODEL_NAME}_${SCENARIO}_$(date +"%Y-%m-%d_%H-%M-%S").metric
-  nohup sh get_metrics.sh > $metric 2>&1 &
+  nohup sh get-metrics.sh > $metric 2>&1 &
 fi
 
 ## Define log file
