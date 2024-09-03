@@ -56,7 +56,7 @@ for _scn in "${_scns[@]}"
 do
   # Pre-defined scenarios are IR/QA/TS/GC/RAG, other than
   if ! echo $_scn | grep -E "^(IR|QA|TS|GC|RAG|GP)$" >/dev/null 2>&1 ; then
-    echo_error "Scenario: $_scn is not a pre-defined screnario, please check or define it in start_benchmark.sh."
+    echo_error "Scenario: $_scn is not a pre-defined screnario, please check or define it in start-benchmark.sh."
     exit 1
   fi
 
@@ -128,7 +128,7 @@ do
     timestamp=$(date +"%Y-%m-%d_%H-%M")
     start_secs=$(date +%s)
     echo "$(date +"%Y-%m-%d_%H-%M-%S"): Starting scenario: $scn, job $i - concurrency: $con ..."
-    ./start_benchmark.sh $scn $con $MODEL_NAME $i $timestamp >> $BATCH_RESULT
+    ./start-benchmark.sh $scn $con $MODEL_NAME $i $timestamp >> $BATCH_RESULT
     if [ $? -ne 0 ]; then
       echo_error "$(date +"%Y-%m-%d_%H-%M-%S"): Benchmark job $i failed, please check log file logs/${timestamp}.${scn}-${con}-${MODEL_NAME}-${i}.out"
     fi
