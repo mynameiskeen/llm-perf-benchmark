@@ -56,7 +56,7 @@ echo_log () {
 
 # Start sglang using awq 
 cd /data/sglang
-./manage_sglang.sh start llama3-8b-instruct-awq-int4
+./manage-sglang.sh start llama3-8b-instruct-awq-int4
 
 if [ $? -ne 0 ]; then
   echo_error "sglang failed to start."
@@ -87,7 +87,7 @@ done
 
 # Stop sglang
 cd /data/sglang
-./manage_sglang.sh stop
+./manage-sglang.sh stop
 
 if [ $? -ne 0 ]; then
   echo_error "sglang failed to stop."
@@ -95,7 +95,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Start sglang in fp16
-./manage_sglang.sh start llama3-8b-instruct
+./manage-sglang.sh start llama3-8b-instruct
 
 if [ $? -ne 0 ]; then
   echo_error "sglang failed to start."

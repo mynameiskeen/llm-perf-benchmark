@@ -56,7 +56,7 @@ echo_log () {
 
 # Start ScaleLLM using awq 
 cd /data/ScaleLLM
-./manage_scalellm.sh start llama3-8b-instruct-awq
+./manage-scalellm.sh start llama3-8b-instruct-awq
 
 if [ $? -ne 0 ]; then
   echo_error "ScaleLLM failed to start."
@@ -87,7 +87,7 @@ done
 
 # Stop ScaleLLM
 cd /data/ScaleLLM
-./manage_scalellm.sh stop
+./manage-scalellm.sh stop
 
 if [ $? -ne 0 ]; then
   echo_error "ScaleLLM failed to stop."
@@ -95,7 +95,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Start ScaleLLM in fp16
-./manage_scalellm.sh start llama3-8b-instruct
+./manage-scalellm.sh start llama3-8b-instruct
 
 if [ $? -ne 0 ]; then
   echo_error "ScaleLLM failed to start."
